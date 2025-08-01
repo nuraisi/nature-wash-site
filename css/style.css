@@ -1,0 +1,460 @@
+    :root {
+        --primary : #6da6fd; 
+        --secondary : #83B4FF;
+        --background : #E8F9FF;
+        --font : #1A2130;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none; /* supaya tidak ada garis bawah di teks link */
+    }
+    
+    body {
+        font-family: "Poppins" sans-serif;
+        color: var(--font);
+        background-color: var(--background);
+        /* min-height: 5000px; */
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* horizontal */
+        align-items: center; /* vertical */
+        padding: 1.4rem 4%;
+        background-color: var(--background);
+        border-bottom: 3px solid var(--primary);
+        position: fixed; /* supaya navbar tetap diam diatas saat di scroll */
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 9999;
+    }
+
+    .navbar .navbar-logo {
+        font-size: 2rem;
+        font-weight: 700;
+        font-style: italic;
+        color: var(--primary);
+    }
+
+    .navbar .navbar-logo span {
+        color: var(--secondary);
+    }
+
+    /* jika ingin menu nya di kanan
+        .navbar .navbar-menu {
+        margin-left: auto;
+    } */
+
+    .navbar .navbar-menu a {
+        color: var(--primary);
+        display: inline-block;
+        font-weight: bold;
+        margin: 0 1rem;
+        font-size: 1.2rem;
+    }
+
+    .navbar .navbar-menu a:hover {
+        color: var(--secondary);
+    }
+
+    .navbar .navbar-menu a::after {
+        content: ' ';
+        display:block;
+        padding-bottom: 0.5rem;
+        border-bottom: 0.2rem solid var(--secondary);
+        transform: scaleX(0);
+        transition: 0.2s linear;
+    }
+
+    .navbar .navbar-menu a:hover::after {
+        transform: scaleX(0.7);
+    }
+
+    .navbar .navbar-icons a {
+        color: var(--primary);
+        margin: 0 0.5rem;
+    }
+
+    .navbar .navbar-icons a:hover {
+        color: var(--secondary);
+    }
+
+    #icon-hamburger {
+        display: none;
+    }
+
+    /* Hero Section */
+
+    .hero {
+        display: flex;
+        align-items:center;
+        background-image: linear-gradient(0deg, rgba(232, 249, 255, 0.5) 3%, rgba(255, 255, 255, 0) 25%),
+                          url('../img/header-2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        position: relative;
+
+    }
+
+    .hero .content {
+        padding: 1.4rem 7%;
+        max-width: 60rem;
+    }
+
+    .hero .content h1 {
+        font-size: 5em;
+        color: var(--font);
+        text-shadow: 1px 1px 5px rgba(1, 1, 3, 0.5);
+        line-height: 1;
+    }
+
+    .hero .content h1 span {
+        color: var(--primary);
+    }
+
+    .hero .content p {
+        font-size: 1.6rem;
+        font-weight: 100;
+        text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+        margin-top: 1rem;
+        line-height: 1.2;
+    }
+
+    .hero .content .cta {
+        font-size: 1.4rem;
+        margin-top: 1rem;
+        padding: 1rem 3rem;
+        display: inline-block;
+        color: var(--font);
+        background-color: var(--primary);
+        border-radius: 0.7rem;
+        text-shadow: rgba(232, 249, 255, 0.5);
+
+    }
+
+    /* Tentang Kami */
+
+    .about{
+        margin-bottom: 12rem;
+        padding: 7rem 7% 1.4rem;
+    }
+
+    .about h2, .our-service h2, .contact h2 {
+        text-align: center;
+        font-size: 2.6rem;
+        margin-bottom: 3rem;
+    }
+
+    .about h2 span, .our-service h2 span, .contact h2 span{
+        color: var(--primary);
+    }
+
+    .about .row {
+        display: flex;
+    }
+
+    .about .row .about-img {
+        flex: 1 1 45rem;
+        /* untuk 4 foto ; menggunakan grid */
+        /* display: grid;
+        grid-template-columns: repeat(2, 1fr); */
+    }
+
+    .about .row .about-img img {
+        width: 90%;
+        height: 100%;
+    }
+
+    .about .row .content {
+        flex: 1 1 35rem;
+    }
+
+    .about .row .content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .about .row .content p {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7rem;
+        font-weight: 100;
+    }
+
+    /* Layanan Kami */
+
+    .our-service {
+        margin-bottom: 12rem;
+        padding: 7rem 7% 1.4rem;
+    }
+
+    .our-service h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .our-service p {
+        text-align: center;
+        line-height: 1.6;
+        font-weight: 100;
+        max-width: 40rem;
+        margin: auto;
+        font-size: 1.3rem;
+    }
+
+    .our-service .row {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        margin-top: 2rem;
+        gap: 4rem;
+    }
+
+    .our-service .row .service-card {
+        text-align: center;
+    }
+
+    .our-service .row .service-card img{
+        margin-top: 5rem;
+        border-radius: 50%;
+        width: 100%;
+    }
+
+    .our-service .row .service-card .service-card-title {
+        margin: 2rem auto 0.7rem;
+    }
+
+    /* Contact Kami */
+
+    .contact {
+        padding: 7rem 7% 1.4rem;
+        margin-bottom: 12rem;
+    }
+
+    .contact h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .contact p {
+        text-align: center;
+        line-height: 1.6;
+        font-weight: 100;
+        max-width: 40rem;
+        margin: auto;
+        font-size: 1.3rem;
+    }
+
+    .contact .row {
+        display: flex;
+        margin-top: 2rem;
+        background-color: var(--secondary);
+    }
+
+    .contact .row .map {
+        flex: 1 1 45rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .contact .row form {
+        flex: 1 1 45rem;
+        padding: 5rem 2rem;
+        text-align: center; 
+    }
+
+    .contact .row .input-grup {
+        display: flex;
+        padding-left: 0;
+        align-items: center;
+        margin-top: 2rem;
+        background-color: white;
+        border: 1px solid var(--font);
+    }
+
+    .contact .row .input-grup input {
+        background: none;
+        padding: 1.7rem;
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    .contact .row button {
+        margin-top: 3rem;
+        padding: 0.5rem 2.5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: inline-block;
+        background-color: #FFCC00;
+        font-weight: bold;
+
+    }
+
+    .contact .row form .input-grup i {
+        margin-left: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--secondary);
+        text-align: center;
+        padding: 1rem 0 2rem;
+        margin-top: 3rem;
+    }
+
+    footer .socials {
+        padding: 1rem 0;
+    }
+
+    footer .socials a {
+        margin: 1rem;
+        color: white;
+    }
+
+    footer .socials a:hover, footer .links a:hover {
+        color: var(--font);
+    }
+
+    footer .links {
+        margin-bottom: 1rem;
+    }
+
+    footer .links a {
+        padding: 0.7rem 0.7rem;
+        color: white;
+        font-weight: bold;
+    }
+
+    footer .credit {
+        font-size: 1rem;
+    }
+
+    footer .credit p {
+        color: white;
+        font-weight: bold;
+    }
+
+    footer .credit a {
+        color: var(--font);
+    }
+    
+    /* Media Queries (responsif) */
+    /* Laptop */
+    @media (max-width : 1366px) {
+        html {
+            font-size: 75%;
+        }
+    }
+
+    /* Tablet */
+    @media (max-width : 768px) {
+        html {
+            font-size: 62.5%;
+        }
+
+        /* Navbar */
+
+        #icon-hamburger {
+            display: inline-block;
+        }
+
+        .navbar .navbar-menu {
+            position: absolute;
+            width: 30rem;
+            height: 100vh;
+            background-color: var(--primary);
+            top: 100%;
+            right: -100%;
+            transition: 0.3s;
+        }
+
+        .navbar .navbar-menu.active {
+            right: 0;
+        }
+
+        .navbar .navbar-menu a {
+            display: block;
+            color: white;
+            font-size: 2rem;
+            margin: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        .navbar .navbar-menu a::after {
+            transform-origin: 0 0;
+        }
+
+        .navbar .navbar-menu a:hover::after {
+            transform: scaleX(0.2);
+        }
+
+        /* Tentang Kami */
+
+        .about .row {
+            flex-wrap: wrap;
+        }
+
+        .about .row .about-img img {
+           width: 100%;
+           height: 100%;
+        }
+
+        .about .row .content {
+            padding: 0;
+        }
+
+        .about .row .content h3 {
+            margin-top: 2rem;
+            font-size: 2rem;
+        }
+
+        .about .row .content p {
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+            text-align: justify;
+        }
+
+        .our-service {
+            padding: 8rem 7% 1.4rem;
+        }
+
+        .our-service p {
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+            text-align: center;
+        }
+
+        .contact .row {
+            flex-wrap: wrap;
+        }
+
+        .contact .row .map {
+            height: 30rem;
+           
+        }
+
+        .contact .row form {
+            padding-top: 0;
+
+        }
+
+    }
+
+    /* Mobile Phone ; 450px*/
+    @media (max-width : 450px) {
+        html {
+            font-size: 55%;
+        }
+    }
